@@ -47,7 +47,7 @@
 
                 <div class="cta">
                     <h1>If you want your lawn to look immaculate, don't wait any longer.</h1>
-                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span><button>CONTACT NOW! →</button></span></h3>
+                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span><button>CONTACT NOW →</button></span></h3>
                 </div>
                 <div class="before-after">
                     <div>
@@ -82,9 +82,35 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
-            <!-- 
+            <div id="serviceCont">
+                <h1>What I can do for YOU!</h1>
+                <div id="serHolder">
+                    <div class="serBox">
+                        <ul>
+                            <li>Lawn Mowing</li>
+                            <li>Grass Trimming and Edging</li>
+                            <li>Weed Control and Removal</li>
+                            <li>Fertilization and Soil Treatment</li>
+                            <li>Lawn Aeration</li>
+                            <li>Seeding and Sod Installation</li>
+                            <li>Lawn Dethatching</li>
+                        </ul>
+                    </div>
+                    <div class="serBox">
+                        <ul>
+                            <li>Irrigation System Installation and Maintenance</li>
+                            <li>Landscape Design and Installation</li>
+                            <li>Pest and Disease Control for Lawns</li>
+                            <li>Mulching and Bed Maintenance</li>
+                            <li>Seasonal Cleanups (Spring and Fall)</li>
+                            <li>Tree and Shrub Pruning</li>
+                            <li>Leaf Removal</li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+
             <div id="contactCont">
                  <form method="POST" action='{{url("/contact")}}' id="contact">
                     {{csrf_field()}}
@@ -112,7 +138,24 @@
                     </div>
                     <button class="submit" type="submit">SEND</button>
                 </form>
-            </div>--> 
+            </div>
+            <div id="footer">
+                <div class="socials">
+                    <div class="sRow">
+                        <span class="icons"><i class="fa-brands fa-square-facebook" style="color: #ccff33;"></i></span>
+                        <span class="icons"><i class="fa-brands fa-instagram" style="color: #ccff33;"></i></span>
+                    </div>
+                    <div class="sRow">
+                        <span class="icons"><i class="fa-brands fa-square-twitter" style="color: #ccff33;"></i></span>
+                        <span class="icons"><i class="fa-brands fa-linkedin"  style="color: #ccff33;"></i></span>
+                    </div>
+                </div>
+                <div class="copyright">© 2023 JK Web Dev</div>
+                <div class="fTitle">
+                    <h1>Freeman's<br><span style="color:white;">Mowing</span></h1>
+                </div>
+            </div>
+            
         </div>
     </body>
 </html>

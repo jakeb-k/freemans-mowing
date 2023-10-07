@@ -17,7 +17,7 @@ SPLASH SECTION STYLING
 #splashCont {
     margin:auto; 
 }
-#header {
+#header, #footer {
     display:flex;
     flex-direction:row-reverse;
     justify-content: space-around;
@@ -36,7 +36,7 @@ SPLASH SECTION STYLING
     display:flex; 
     flex-direction:row; 
 }
-.title h1 {
+.title h1, #serviceCont h1, #footer h1 {
     font-family:'Staatliches', sans-serif; 
     color:#CCFF33; 
     font-size:62px; 
@@ -98,7 +98,41 @@ SPLASH SECTION STYLING
     padding-top: 0;
 }
 .testimonials h3 {
+    margin:25px 0; 
     font-style: italic;
+}
+/*
+
+
+
+
+
+SERVICE SEC STYLING
+
+
+
+
+
+*/
+#serviceCont {
+    background:#006400; 
+    padding:2.5% 10%; 
+}
+#serHolder {
+    display:flex;
+    flex-direction:row;
+    width:90%; 
+    justify-content: center;
+    margin:0 auto; 
+}
+#serHolder li {
+    font-family:'Work Sans', sans-serif;
+    color:white; 
+    font-size:22px; 
+}
+.serBox {
+    width:100%;  
+    margin:1%; 
 }
 /*
 
@@ -123,20 +157,19 @@ CONTACT FORM STYLING
     width: 500px;
     display: flex;
     flex-direction: column;
-    background: rgb(40, 40, 40);
-    border: 3px solid #00BBF9;
-    box-shadow: 30px 30px 0 #018cbe;
     padding: 20px;
-    color: #00BBF9;
+    color: #006400;
     font-size: 14px;
-    border-radius: 5px;
+    border:3px solid #006400;
+    border-radius: 15px;
+    margin:25px auto; 
 }
 
 label {
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 24px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', sans-serif;
 }
 
 input {
@@ -152,7 +185,7 @@ input {
     font-family: 'Staatliches', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: 44px;
-    color: #00BBF9;
+    color: #006400;
    
 }
 
@@ -160,17 +193,15 @@ input {
 #contact button {
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 10px 10px 0 #018cbe;
-    transition: .5s ease-in-out;
     padding-top: 10px;
     font-size: 38px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 3px solid #00BBF9;
+    border: 3px solid #006400;
     background: none;
-    color: #00BBF9;
-    font-family: 'Heritho', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #006400;
+    font-family: 'Staatliches', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #contact button span {
@@ -178,27 +209,19 @@ input {
 }
 
 #contact button {
-    box-shadow: 0 0 5px #00BBF9;
+    box-shadow: 0 0 5px #006400;
     border-radius: 80px;
-    transition: .5s ease-in-out;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-    animation-delay: 0.3s;
 }
 .cInput {
     display:flex;
     flex-direction:column; 
 }
-//
 
-
-
-
-//CONTACT EMAIL STYLING
-
-
-
-
-
-//
+.copyright {
+    color:#CCFF33;
+    font-family:'Work Sans', Arial, Helvetica, sans-serif; 
+    font-size:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+}
