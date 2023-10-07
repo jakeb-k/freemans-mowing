@@ -188,30 +188,18 @@ input {
     color: #006400;
    
 }
-
-
 #contact button {
-    cursor: pointer;
-    border-radius: 5px;
-    padding-top: 10px;
-    font-size: 38px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border: 3px solid #006400;
-    background: none;
-    color: #006400;
-    font-family: 'Staatliches', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:100%;
+    background:none;
+    border:none;
+    height:100%; 
+    padding:24px; 
+    color:#006400; 
+
+    
 }
 
-#contact button span {
-    margin-top: 5px;
-}
 
-#contact button {
-    box-shadow: 0 0 5px #006400;
-    border-radius: 80px;
-}
 .cInput {
     display:flex;
     flex-direction:column; 
@@ -315,6 +303,8 @@ button.vine-button:hover::after {
 }
 
 .fade-image {
+    pointer-events: none;
+    margin:auto; 
     height:500px;
     width:400px; 
     overflow:visible;
@@ -327,3 +317,97 @@ button.vine-button:hover::after {
     transition: opacity 1s ease;
     /* Add a smooth transition for opacity changes */
 }
+
+[anim="ripple"] {
+
+    //  Customize effect by defining the following
+    //  variables on the parent element 
+    //  --ripple-background: white;
+    //  --ripple-opacity: 0.3;  
+    //  --ripple-duration: 600ms;      
+    //  --ripple-easing: linear;
+
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: var(--ripple-background, white);
+        border-radius: 50%;
+        pointer-events: none;
+        //  position and size 
+        top: calc(var(--y) * 1px);
+        left: calc(var(--x) * 1px);
+        width: calc(var(--d) * 1px);
+        height: calc(var(--d) * 1px);
+
+        //  animated properties
+        opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+        transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+        transform: translate(-50%, -50%) scale(var(--s, 1));
+        transform-origin: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+//  Just some styling 
+
+
+#contact .click-button {
+
+    --ripple-background: black;
+    --ripple-opacity: 0.1;
+    --ripple-duration: 600ms;
+width: 100%;
+    display: block;
+    margin-top: 1em;
+    padding: 24px;
+    background: whitesmoke;
+    color: black;
+    text-decoration: none;
+    border: 1px solid darken(whitesmoke, 10%);
+    min-width: 200px;
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    transition: background-color 300ms;
+
+    &:hover {
+        background-color: darken(whitesmoke, 3%);
+    }
+}
+
+.rainbow {
+   
+    text-align:center;
+    font-family:'Staatliches', 'Arial', sans-serif; 
+    font-weight:bold;
+    font-size:36px; 
+    border:1px solid #006400;
+    border-radius:15px; 
+    --ripple-opacity: 1;
+    --ripple-background: radial-gradient(circle at center, #ccff33, #a1e63a, #77cd41, #4da548, #006400c5, #21812198, #69cd692e, #c9ffc91c);
+    --ripple-duration: 5s;
+    --ripple-easing: cubic-bezier(0, .5, .5, 1);
+    background-color: none;
+    color: rgba(white, 0.7);
+
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+        background-color: none;
+        color: rgba(white, 1);
+    }
+}
+
+
+
