@@ -43,10 +43,48 @@
                         <h1>Freeman's<br><span style="color:white;">Mowing</span></h1>
                         <img src="{{url('images/mowgo.png')}}" />
                      </div>
-
                 </div>
-            </div>
 
+                <div class="cta">
+                    <h1>If you want your lawn to look immaculate, don't wait any longer.</h1>
+                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span><button>CONTACT NOW! →</button></span></h3>
+                </div>
+                <div class="before-after">
+                    <div>
+                        <h1>BEFORE</h1>
+                    </div>
+                    <div>
+                        <h1> AFTER </h1>
+                    </div> 
+                </div>
+                <div class="slideshow">
+                    <div class="slideBox"></div>
+                    <div class="slideBox"></div>
+                </div>
+                <div class="testimonials">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval=3000>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h3 style="text-align:center; color:#006400">"I can't believe how pristine my lawn looks now! This lawn mowing service is the real deal."</h3>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 style="text-align:center; color:#006400">"Exceptional attention to detail. My yard has never looked better."</h3>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 style="text-align:center; color:#006400">"Reliable, professional, and affordable. I highly recommend their lawn care services."</h3>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 style="text-align:center; color:#006400">"I've tried many lawn care companies, but this one stands out. My garden is thriving."</h3>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 style="text-align:center; color:#006400">"Quick response, friendly staff, and a beautiful lawn. What more could you ask for?"</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 
             <div id="contactCont">
                  <form method="POST" action='{{url("/contact")}}' id="contact">
                     {{csrf_field()}}
@@ -74,7 +112,7 @@
                     </div>
                     <button class="submit" type="submit">SEND</button>
                 </form>
-            </div>
+            </div>--> 
         </div>
     </body>
 </html>
