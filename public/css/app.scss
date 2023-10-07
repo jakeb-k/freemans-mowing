@@ -225,3 +225,105 @@ input {
     flex-direction:column;
     justify-content: flex-end;
 }
+//EXPERIMENTAL CSS
+@keyframes beat {
+
+    from {
+        transform:scale(1); 
+    }
+    to {
+        transform:scale(5); 
+    }
+}
+button.vine-button {
+    animation: beat 3s ease-in-out infinite;
+    transform-origin: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+button.vine-button::before,
+button.vine-button::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background-image: url('../images/shrubE.png');
+    /* Replace with your vine image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+button.vine-button::before {
+    top: 0;
+    left: 0;
+    transform: scale(0.8);
+}
+
+button.vine-button::after {
+    bottom: 0;
+    right: 0;
+    transform: scale(0.8) rotate(180deg);
+}
+
+button.vine-button:hover::before,
+button.vine-button:hover::after {
+    opacity: 0;
+}
+
+
+
+.animated-title {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.animated-list {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.serBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.in-view .animated-title {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.in-view .animated-list {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contactCont {
+    position: relative;
+    overflow: hidden;
+    /* Hide the overflow to prevent the image from showing initially */
+}
+
+.fade-image {
+    height:500px;
+    width:400px; 
+    overflow:visible;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    opacity: 1;
+    scale:1.8; 
+    /* Initially set opacity to 0 to make the image invisible */
+    transition: opacity 1s ease;
+    /* Add a smooth transition for opacity changes */
+}

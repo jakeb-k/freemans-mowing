@@ -23,7 +23,64 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       
     </head>
+    <script>
+        $(function () {
+            $('.vine-button') .click(function () {
+            $('html, body') .animate ({
+                scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
+                }, 1500);
+                return false;
+            })
+        });
+        
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
 
+        function handleScroll() {
+            var elements = document.querySelectorAll('#serviceCont');
+            elements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.classList.add('in-view');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+        handleScroll(); // Call this initially to check on page load
+
+        function isElementInViewport2(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight*8 || document.documentElement.clientHeight*8) &&
+                rect.right <= (window.innerWidth*8 || document.documentElement.clientWidth*8)
+            );
+        }
+
+        function handleScroll2() {
+            var image = document.querySelector('.fade-image');
+
+            if (isElementInViewport2(image)) {
+                image.style.opacity = 1; /* If the image is in the viewport, make it visible */
+            } else {
+                image.style.opacity = 0; /* If it's not in the viewport, hide it */
+            }
+        }
+        window.addEventListener('scroll', handleScroll2);
+        window.addEventListener('resize', handleScroll2);
+        handleScroll2();
+
+        
+    </script>
     <body>
         <div id="container">
             <div id="splashCont">
@@ -47,7 +104,8 @@
 
                 <div class="cta">
                     <h1>If you want your lawn to look immaculate, don't wait any longer.</h1>
-                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span><button>CONTACT NOW →</button></span></h3>
+                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span class="heart-beat"><button class="vine-button">CONTACT NOW →</button></span>
+                    <span style="font-size:16px; color:light-grey;">(Click to trim the pesky bush)</span></h3>
                 </div>
                 <div class="before-after">
                     <div>
@@ -83,11 +141,12 @@
                     </div>
                 </div>
             </div>
+            
             <div id="serviceCont">
-                <h1>What I can do for YOU!</h1>
+                <h1 class="animated-title">What I can do for YOU!</h1>
                 <div id="serHolder">
                     <div class="serBox">
-                        <ul>
+                        <ul class="animated-list">
                             <li>Lawn Mowing</li>
                             <li>Grass Trimming and Edging</li>
                             <li>Weed Control and Removal</li>
@@ -98,8 +157,8 @@
                         </ul>
                     </div>
                     <div class="serBox">
-                        <ul>
-                            <li>Irrigation System Installation and Maintenance</li>
+                        <ul class="animated-list">
+                           <li>Irrigation System Installation and Maintenance</li>
                             <li>Landscape Design and Installation</li>
                             <li>Pest and Disease Control for Lawns</li>
                             <li>Mulching and Bed Maintenance</li>
@@ -108,7 +167,8 @@
                             <li>Leaf Removal</li>
                         </ul>
                     </div>
-                </div>                
+                </div>
+         
             </div>
 
             <div id="contactCont">
@@ -138,6 +198,7 @@
                     </div>
                     <button class="submit" type="submit">SEND</button>
                 </form>
+                <img src="{{url('images/bBush.png')}}" alt="Image to Fade" class="fade-image">
             </div>
             <div id="footer">
                 <div class="socials">
