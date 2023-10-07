@@ -46,7 +46,7 @@ span {
 </style>
 <div id="emailCont">
     <div id="eHeader">
-        <h1> Freemans <br><span> Mowing </span></h1>
+        <h1> Freeman's <br><span> Mowing </span></h1>
         <img src="{{url('images/mowgo.png')}}" />
     </div>
     <div id="eBody">

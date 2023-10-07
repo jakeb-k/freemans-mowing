@@ -1,5 +1,64 @@
 @import url('https://fonts.cdnfonts.com/css/work-sans');
 @import url('https://fonts.cdnfonts.com/css/staatliches-2');
+
+/*
+
+
+
+
+
+SPLASH SECTION STYLING
+
+
+
+
+*/ 
+
+#splashCont {
+    margin:auto; 
+}
+#header {
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content: space-around;
+    background:#006400; 
+    height:180px; 
+}
+.socials {
+    display:flex;
+    flex-direction:column; 
+}
+.sRow {
+    display:flex;
+    flex-direction:row; 
+}
+.title {
+    display:flex; 
+    flex-direction:row; 
+}
+.title h1 {
+    font-family:'Staatliches', sans-serif; 
+    color:#CCFF33; 
+    font-size:62px; 
+}
+.title img {
+    width: 256px;
+    height: 256px;
+}
+.icons {
+    font-size:44px; 
+    margin:5px; 
+}
+/*
+
+
+
+CONTACT FORM STYLING
+
+
+
+
+*/
 .cContainer {
     display: flex;
     flex-direction: column;
