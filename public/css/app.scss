@@ -163,6 +163,7 @@ CONTACT FORM STYLING
     border:3px solid #006400;
     border-radius: 15px;
     margin:25px auto; 
+    box-shadow:10px 10px 5px rgb(64, 63, 63);
 }
 
 label {
@@ -352,13 +353,6 @@ button.vine-button:hover::after {
 }
 
 
-
-
-
-
-
-
-
 //  Just some styling 
 
 
@@ -411,3 +405,99 @@ width: 100%;
 
 
 
+/*
+
+
+
+
+
+
+
+DASHBOARD STYLING
+
+
+
+
+
+*/
+#dashboard {
+    width:80%;
+    margin:100px auto; 
+}
+#dashboard h1 {
+    font-family: 'Staatliches', sans-serif;
+    color:#006400; 
+}
+#dashboard img {
+    height:150px; 
+    width:150px; 
+}
+.dHeader {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    background:#006400;
+    box-shadow: 0 0 10px #CCFF33;
+}
+.dashBody {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width:100%; 
+    margin:25px auto; 
+}
+.postBox {
+    display:flex;
+    flex-direction:row; 
+    justify-content: space-evenly;
+    border-bottom:2px solid rgba(73, 73, 73, 0.621);
+    
+}
+.postContainer, .imageContainer {
+    width:95%;
+    margin: 0 2.5%; 
+}
+
+.pInfo * {
+    font-family: 'Work Sans', sans-serif;
+}
+/*
+
+
+
+
+
+POST STYLING
+
+
+
+
+
+
+*/
+#articleContainer h1 {
+    color:#006400;
+    font-family:'Staatliches', sans-serif; 
+}
+#articleContainer h4 {
+    color:#006400;
+    font-family:'Staatliches', sans-serif; 
+}
+#articleContainer h6, #articleContainer p {
+    font-family:'Work Sans', sans-serif;
+    color:rgb(34, 34, 34); 
+}
+#articleContainer img {
+    height:350px; 
+    width:350px; 
+}
+#articleContainer {
+    width:80%;
+    margin:75px auto; 
+  
+}
+.aBox {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly; 
+}
