@@ -28,10 +28,17 @@
                             <span class="icons"><i class="fa-brands fa-square-facebook" style="color: #ccff33;"></i></span>
                             <span class="icons"><i class="fa-brands fa-instagram" style="color: #ccff33;"></i></span>
                         </div>
-                        <div class="sRow">
-                            <span class="icons"><i class="fa-brands fa-square-twitter" style="color: #ccff33;"></i></span>
-                            <span class="icons"><i class="fa-brands fa-linkedin"  style="color: #ccff33;"></i></span>
+
+                        <div class="sCol">
+                            <a href='{{url("posts")}}'>
+                                <button>POSTS</button>
+                            </a>
+                            <a class="contactBtn">
+                                <button>CONTACT</button>
+                            </a>
+                           
                         </div>
+
                     </div>
 
                     <div class="title">
@@ -46,9 +53,13 @@
                         <span class="icons"><i class="fa-brands fa-square-facebook" style="color: #ccff33;"></i></span>
                         <span class="icons"><i class="fa-brands fa-instagram" style="color: #ccff33;"></i></span>
                     </div>
-                    <div class="sRow">
-                        <span class="icons"><i class="fa-brands fa-square-twitter" style="color: #ccff33;"></i></span>
-                        <span class="icons"><i class="fa-brands fa-linkedin"  style="color: #ccff33;"></i></span>
+                    <div class="sCol">
+                        <a href='{{url("posts")}}'>
+                            <button>POSTS</button>
+                        </a>
+                        <a class="contactBtn">
+                            <button>CONTACT</button>
+                        </a>       
                     </div>
                 </div>
                 <div class="copyright">© 2023 JK Web Dev</div>
@@ -62,6 +73,14 @@
 <script>
         $(function () {
             $('.vine-button') .click(function () {
+            $('html, body') .animate ({
+                scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
+                }, 1500);
+                return false;
+            })
+        });
+        $(function () {
+            $('.contactBtn') .click(function () {
             $('html, body') .animate ({
                 scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
                 }, 1500);

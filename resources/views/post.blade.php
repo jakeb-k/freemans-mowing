@@ -4,8 +4,10 @@
 @endsection
 @section('content')
 <div id="container">
-
     <div id="articleContainer">
+        <a href='{{url("posts")}}'>
+            <button>BACK</button>
+        </a>
         <div class="aBox">
             <div class="aInfo">
                 <h1>{{$post->title}} </h1>

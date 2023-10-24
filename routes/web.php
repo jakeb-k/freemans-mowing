@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'home']);
 Route::resource('/posts', PostController::class); 
-
+Route::post('/contact', [PostController::class, 'contact']); 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

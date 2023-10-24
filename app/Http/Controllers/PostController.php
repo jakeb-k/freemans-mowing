@@ -12,10 +12,15 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function home()
     {
         $posts = Post::all(); 
         return view('index')->with('posts', $posts); 
+    }
+    public function index()
+    {
+        $posts = Post::all(); 
+        return view('dashboard')->with('posts', $posts); 
     }
 
     /**
@@ -30,6 +35,12 @@ class PostController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
+    {
+
+
+    }
+
+    public function contact(Request $request)
     {
          $this->validate($request,[
             'name'=>'required|max:55',

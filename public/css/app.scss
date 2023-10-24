@@ -32,6 +32,16 @@ SPLASH SECTION STYLING
     display:flex;
     flex-direction:row; 
 }
+.sCol {
+    display:flex;
+    flex-direction:column; 
+}
+.sCol a {
+    margin:5px 0; 
+}
+.sCol button {
+    width: 100%;
+}
 .title {
     display:flex; 
     flex-direction:row; 
@@ -447,6 +457,7 @@ DASHBOARD STYLING
     margin:25px auto; 
 }
 .postBox {
+    padding: 20px 0; 
     display:flex;
     flex-direction:row; 
     justify-content: space-evenly;
@@ -500,4 +511,7 @@ POST STYLING
     display:flex;
     flex-direction:row;
     justify-content: space-evenly; 
+}
+.aInfo * {
+    padding:10px 0px;
 }
