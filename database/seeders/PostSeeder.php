@@ -14,13 +14,6 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         DB::table('posts')->insert([
-            'title' => "Bush Trimmy in Palmy",
-            'date' => '22nd of October',
-            'review'=>'Such an impeccable job done by Indos, Highly recommend. He will be trimming all my future bushes',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit.',
-            'images'=>'mowgo.png,blogo.png' 
-        ]);
-        DB::table('posts')->insert([
             'title' => "Precision Pruning, Mowing, and Weed Removal for a Pristine Lawn",
             'date' => '18th of October',
             'review'=>'Outstanding job! The lawn care teams attention to detail in pruning our hedges, mowing the lawn, and getting rid of those stubborn weeds truly transformed our yard. It looks immaculate.',

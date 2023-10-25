@@ -8,8 +8,9 @@
         <!-- Fonts -->
         
         <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
+        <link rel="icon" type="image/x-icon" href="{{url('favicon.ico')}}">
         
-       <link href="{{asset('fontawesome-free-6.4.0-web/css/brands.css')}}" rel="stylesheet">
+        <link href="{{asset('fontawesome-free-6.4.0-web/css/brands.css')}}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -137,7 +138,7 @@
         window.addEventListener('resize', handleScroll2);
         handleScroll2();
 
-                [].map.call(document.querySelectorAll('[anim="ripple"]'), el=> {
+    [].map.call(document.querySelectorAll('[anim="ripple"]'), el=> {
     el.addEventListener('click',e => {
         e = e.touches ? e.touches[0] : e;
         const r = el.getBoundingClientRect(), d = Math.sqrt(Math.pow(r.width,2)+Math.pow(r.height,2)) * 2;

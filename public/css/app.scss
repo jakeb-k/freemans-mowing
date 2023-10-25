@@ -430,6 +430,16 @@ DASHBOARD STYLING
 
 
 */
+.postOps {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.postOps form button {
+    background:none; 
+    font-size:26px;
+    border:none; 
+}
 #dashboard {
     width:80%;
     margin:100px auto; 
@@ -514,4 +524,18 @@ POST STYLING
 }
 .aInfo * {
     padding:10px 0px;
+}
+/*
+
+
+
+CREATE PAGE STYLING
+
+
+*/
+#fContainer {
+    margin:90px 20%; 
+}
+#fContainer .back {
+    margin-left:20%; 
 }

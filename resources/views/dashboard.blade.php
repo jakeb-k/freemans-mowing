@@ -1,24 +1,46 @@
 @extends('layouts.master')
 @section('title')
-    <title>POSTS</title>
+    <title>Posts</title>
 @endsection
 @section('content')
 <div id="dashboard">
     <div class="dashBody">
         <div class="postContainer">
-            <a href='{{url("/")}}'>
-                <button>HOME</button>
-            </a>
+            <div class="postOps">
+                <a href='{{url("/")}}'>
+                    <button>HOME</button>
+                </a>
+                @auth
+                <a href='{{url("/posts/create")}}'>
+                    <button>ADD POST</button>
+                </a>
+                @endauth
+            </div>
             <h1>Posts</h1> 
             @foreach($posts as $post)
             <div class="postBox">
                 <img src="{{url('images/mowgo.png')}}" />
                 <div class="pInfo">
                     <h3> {{$post->title}} </h3>
-                    <h6> <i> {{$post->date}} </i></h6>
+                    <h6> <i> {{$post->date?? date_format($post->created_at, 'jS \of F')}} </i></h6>
                     <p>{{$post->description}}</p>
-                    <a href='{{url("posts/$post->id")}}'>
-                    <button class="postBtn">VIEW</button></a>
+
+                    <div class="postOps">
+
+                        <a href='{{url("posts/$post->id")}}'>
+                        <button class="postBtn">VIEW</button>
+                        </a>
+                        @auth
+                        <form class="opForm" method="POST" action='{{url("posts/$post->id")}}' enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <input name="post_id" type="hidden" value="{{$post->id}}" /> 
+                            <button type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                            </form>
+                        @endauth
+                    </div>
                 </div>
             </div>
             @endforeach

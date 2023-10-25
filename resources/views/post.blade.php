@@ -11,7 +11,7 @@
         <div class="aBox">
             <div class="aInfo">
                 <h1>{{$post->title}} </h1>
-                <h4>{{$post->date}}</h4>
+                <h4>{{$post->date ?? date_format($post->created_at, 'l jS \of F')}}</h4>
                 <h6><i>'{{$post->review}}'</i></h6>
                <p>{{$post->description}} </p> 
             </div>

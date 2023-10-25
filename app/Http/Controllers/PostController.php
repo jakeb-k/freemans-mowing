@@ -14,12 +14,13 @@ class PostController extends Controller
      */
     public function home()
     {
-        $posts = Post::all(); 
-        return view('index')->with('posts', $posts); 
+       
+        return view('index'); 
     }
     public function index()
     {
-        $posts = Post::all(); 
+        $posts = Post::all()->reverse();
+
         return view('dashboard')->with('posts', $posts); 
     }
 
@@ -28,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create'); 
     }
 
     /**
@@ -36,7 +37,31 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title'=>'required:max:75',
+            'description'=>'required',
+            'review'=>'required'
+            //'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+        ]);
 
+        //MULTI IMAGE UPLOAD CODE
+        /*foreach ($request->file('imageFile') as $file) {   
+            $count++; 
+            $fileName = time() .$count. '.' . $file->extension();
+            $path = $file->storeAs('public/images', $fileName); 
+            $images[] = $fileName; 
+        }*/
+
+        $post = new Post(); 
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->review = $request->review; 
+        $post->save(); 
+
+        $posts = Post::all()->reverse(); 
+       
+
+        return view('dashboard')->with('posts',$posts); 
 
     }
 
@@ -85,6 +110,10 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        $posts = Post::all()->reverse(); 
+        return redirect()->back()->with('posts', $posts); 
     }
 }
