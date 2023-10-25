@@ -1,6 +1,8 @@
 @import url('https://fonts.cdnfonts.com/css/work-sans');
 @import url('https://fonts.cdnfonts.com/css/staatliches-2');
 
+$p: 'Staatliches'; 
+
 /*
 
 
@@ -31,13 +33,17 @@ SPLASH SECTION STYLING
 .sRow {
     display:flex;
     flex-direction:row; 
+    justify-content: flex-end;
+    width:auto; 
 }
 .sCol {
     display:flex;
-    flex-direction:column; 
+    flex-direction:column;
+    border: 1px solid black;
+
 }
-.sCol a {
-    margin:5px 0; 
+.sRow a {
+    padding:5px 0px 0px 50px; 
 }
 .sCol button {
     width: 100%;
@@ -363,7 +369,7 @@ button.vine-button:hover::after {
 }
 
 
-//  Just some styling 
+// FORM BUTTON STYLING
 
 
 #contact .click-button {
@@ -412,7 +418,54 @@ width: 100%;
         color: rgba(white, 1);
     }
 }
+//OTHER BUTTON STYLING
 
+//BUTTON PRIMARY
+@keyframes shimmer {
+    to {
+        background-size: 100% 100%;
+        box-shadow: -2px -2px 6px rgba(255, 227, 126, 0.5), 2px 2px 6px rgba(144, 148, 255, 0.5);
+    }
+}
+a button.tBtn {
+  animation: 1.5s ease infinite alternate running shimmer;
+  background: linear-gradient(90deg, #ccff33 0%, #77cd41 30%, #006400c5 85%);
+  background-size: 200% 100%;
+  border: none;
+	border-radius: 6px;
+  box-shadow: -2px -2px 10px rgba(255, 227, 126, 0.5), 2px 2px 10px rgba(144, 148, 255, 0.5);
+  color: #000000;
+  cursor: pointer;
+    font-family: 'Staatliches';
+  font-size: 22px;
+  overflow: hidden;
+  padding: 10px 20px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s;
+  
+  svg {
+    left: -20px;
+    opacity: 0.5;
+    position: absolute;
+    top: -2px;
+    transition: 0.5s cubic-bezier(.5,-0.5,.5,1.5);
+  }
+  
+  &:hover svg {
+    opacity: 0.8;
+    transform: translateX(50px) scale(1.5);
+  }
+  
+  &:hover {
+    transform: rotate(-3deg);
+  }
+  
+  &:active {
+    transform: scale(0.95) rotate(-3deg);
+  }
+
+}
 
 
 /*
@@ -448,6 +501,11 @@ DASHBOARD STYLING
     background:none; 
     font-size:26px;
     border:none; 
+    transition:0.2s ease-in-out; 
+    &:hover {
+        color:red;
+
+    }
 }
 #dashboard {
     width:80%;
@@ -483,14 +541,12 @@ DASHBOARD STYLING
     border-bottom:2px solid rgba(73, 73, 73, 0.621);
     
 }
-.postContainer, .imageContainer {
-    width:95%;
-    margin: 0 2.5%; 
-}
 
 .pInfo * {
     font-family: 'Work Sans', sans-serif;
 }
+//SECONDARY BUTTON
+
 /*
 
 
