@@ -18,8 +18,9 @@
 
             <div class="aImg">
                 <div class="w3-content w3-display-container">
+                    <?php $images = explode(",", $post->images); ?> 
                     @foreach($images as $img)
-                        <img class="mySlides1" src="{{url('images/'.$img)}}" /> 
+                        <img class="mySlides1" src="{{ asset('storage/images/'.$img) }}" /> 
                     @endforeach
                     <button class="w3-button w3-display-left" onclick="plusDivs1(-1)">&#10094;</button>
                     <button class="w3-button w3-display-right" onclick="plusDivs1(+1)" style="max-width:120%;">&#10095;</button>

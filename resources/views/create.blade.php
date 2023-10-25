@@ -10,16 +10,16 @@
 <div id="fContainer">
     <a class="back" href="{{url('/posts')}}"><button>BACK</button></a>
     <div id="contactCont">
-        <form method="POST" action='{{url("/posts/$post->id")}}' id="contact">
+        @if($post->title != "")
+        <form method="POST" action='{{url("/posts/$post->id")}}' id="contact" enctype=multipart/form-data>
             {{csrf_field()}}
-            @if($post->title != "")
             {{method_field('PUT')}}
-            @endif
-            
-            @if($post->title != "")
             <h1> Update Post </h1>
             @else
-            <h1> Create a new Post! </h1> 
+            <form method=POST action='{{url("/posts")}}' id="contact" enctype=multipart/form-data>
+            {{csrf_field()}}
+            {{method_field('POST')}}
+            <h1> Create a Post! </h1>
             @endif
             
             <div class="cInput">
@@ -37,10 +37,17 @@
                 @enderror
             </div>
 
-            <div class="cInput" style="margin-bottom:50px;">
+            <div class="cInput">
                 <label for="review">CUSTOMER REVIEW:</label>
                 <textarea style="height:100px;" name="review" id="review" placeholder='{{$post->review ?? ""}}'></textarea>
                 @error('review')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="cInput"  style="margin-bottom:50px;">
+                <label for="imageFile[]"> IMAGES: </label> 
+                <input id="images" type="file" name="imageFile[]" multiple="mulitple">
+                @error('imageFile[]')
                     <div class="alert">{{ $message }}</div>
                 @enderror
             </div>

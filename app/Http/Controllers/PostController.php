@@ -38,32 +38,33 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        print('Hit store'); 
         $this->validate($request, [
             'title'=>'required:max:75',
             'description'=>'required',
-            'review'=>'required'
-            //'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+            'review'=>'required',
+            'imageFile' => 'required',
+            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
         ]);
 
         //MULTI IMAGE UPLOAD CODE
-        /*foreach ($request->file('imageFile') as $file) {   
+        $count = 0; 
+        foreach ($request->file('imageFile') as $file) {   
             $count++; 
             $fileName = time() .$count. '.' . $file->extension();
             $path = $file->storeAs('public/images', $fileName); 
             $images[] = $fileName; 
-        }*/
+        }
 
         $post = new Post(); 
         $post->title = $request->title;
         $post->description = $request->description;
         $post->review = $request->review; 
+        $post->images = implode(",",$images); 
         $post->save(); 
 
         $posts = Post::all()->reverse(); 
-       
-
-        return view('dashboard')->with('posts',$posts); 
-
+        return redirect('/posts')->with('posts',$posts); 
     }
 
     public function contact(Request $request)
@@ -105,25 +106,32 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+      
+
         $this->validate($request, [
             'title'=>'required:max:75',
-            'description'=>'required',
-            'review'=>'required'
-            //'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+            'description'=>'max:500',
+            'review'=>'max:500',
+            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
         ]);
-
-        //MULTI IMAGE UPLOAD CODE
-        /*foreach ($request->file('imageFile') as $file) {   
-            $count++; 
-            $fileName = time() .$count. '.' . $file->extension();
-            $path = $file->storeAs('public/images', $fileName); 
-            $images[] = $fileName; 
-        }*/
-        $post = Post::find($id);
+        $post = Post::find($id); 
+        $count = 0; 
+        if($request->file('imageFile')) {
+            foreach ($request->file('imageFile') as $file) {   
+                $count++; 
+                $fileName = time() .$count. '.' . $file->extension();
+                $path = $file->storeAs('public/images', $fileName); 
+                $images[] = $fileName; 
+            }
+            $img =  implode(",", $images);
+        } else {
+            $img = $post->image; 
+        }
+       
         $post->title = $request->title;
-        $post->description = $request->description;
-        $post->review = $request->review; 
-
+        $post->description = $request->description ?? $post->description;
+        $post->review = $request->review ?? $post->review; 
+        $post->images = $img; 
         $post->save(); 
         $posts = Post::all()->reverse(); 
         return redirect('/posts')->with('posts',$posts); 

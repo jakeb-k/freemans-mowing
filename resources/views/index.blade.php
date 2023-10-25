@@ -104,5 +104,71 @@
                 </form>
             <img src="{{url('images/bBush.png')}}" alt="Image to Fade" class="fade-image">
             </div>
-            
+<script>
+ $(function () {
+            $('.vine-button') .click(function () {
+            $('html, body') .animate ({
+                scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
+                }, 1500);
+                return false;
+            })
+        });
+        $(function () {
+            $('.contactBtn') .click(function () {
+            $('html, body') .animate ({
+                scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
+                }, 1500);
+                return false;
+            })
+        });
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        function isElementInViewport2(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight*8 || document.documentElement.clientHeight*8) &&
+                rect.right <= (window.innerWidth*8 || document.documentElement.clientWidth*8)
+            );
+        }
+
+        function handleScroll() {
+            var elements = document.querySelectorAll('#serviceCont');
+            elements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.classList.add('in-view');
+                }
+            });
+        }
+
+        function handleScroll2() {
+            var image = document.querySelector('.fade-image');
+
+            if (isElementInViewport2(image)) {
+                image.style.opacity = 1;
+                
+                return true; /* If the image is in the viewport, make it invisible */
+            } else {
+                image.style.opacity = 0;
+                image.style.postion = 'relative'; 
+                return false; /* If it's not in the viewport, hide it */
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+        handleScroll(); // Call this initially to check on page load
+
+        window.addEventListener('scroll', handleScroll2);
+        window.addEventListener('resize', handleScroll2);
+        handleScroll2();
+</script>
 @endsection
