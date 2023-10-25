@@ -430,6 +430,15 @@ DASHBOARD STYLING
 
 
 */
+.authOps {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:12.5%; 
+}
+.authOps a {
+    margin-top:7.5px; 
+}
 .postOps {
     display:flex;
     flex-direction:row;

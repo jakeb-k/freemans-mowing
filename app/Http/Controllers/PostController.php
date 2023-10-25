@@ -28,8 +28,9 @@ class PostController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('create'); 
+    {   
+        $post = new Post(); 
+        return view('create')->with('post',$post); 
     }
 
     /**
@@ -94,7 +95,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('create')->with('post',$post); 
     }
 
     /**
@@ -102,7 +105,28 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required:max:75',
+            'description'=>'required',
+            'review'=>'required'
+            //'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+        ]);
+
+        //MULTI IMAGE UPLOAD CODE
+        /*foreach ($request->file('imageFile') as $file) {   
+            $count++; 
+            $fileName = time() .$count. '.' . $file->extension();
+            $path = $file->storeAs('public/images', $fileName); 
+            $images[] = $fileName; 
+        }*/
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->review = $request->review; 
+
+        $post->save(); 
+        $posts = Post::all()->reverse(); 
+        return redirect('/posts')->with('posts',$posts); 
     }
 
     /**

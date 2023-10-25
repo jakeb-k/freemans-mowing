@@ -1,24 +1,37 @@
 @extends('layouts.master')
 @section('title')
-<title> Create A Post </title>
+@if($post->title != "")
+<title> Update Post </title>
+@else
+<title> Create A Post </title> 
+@endif
 @endsection
 @section('content')
 <div id="fContainer">
     <a class="back" href="{{url('/posts')}}"><button>BACK</button></a>
     <div id="contactCont">
-        <form method="POST" action='{{url("/posts")}}' id="contact">
+        <form method="POST" action='{{url("/posts/$post->id")}}' id="contact">
             {{csrf_field()}}
-            <h1>Make a new Post!</h1>
+            @if($post->title != "")
+            {{method_field('PUT')}}
+            @endif
+            
+            @if($post->title != "")
+            <h1> Update Post </h1>
+            @else
+            <h1> Create a new Post! </h1> 
+            @endif
+            
             <div class="cInput">
                 <label for="title">TITLE:</label>
-                <input type="text" name="title" id="title" />
+                <input type="text" name="title" id="title" value='{{$post->title ?? ""}}' />
                 @error('title')
                     <div class="alert">{{ $message }}</div>
                 @enderror
             </div>
             <div class="cInput">
                 <label for="description">DESCRIPTION:</label>
-                <textarea style="height:100px;" name="description" id="description"></textarea>
+                <textarea style="height:100px;" name="description" id="description" placeholder='{{$post->description ?? ""}}'></textarea>
                 @error('description')
                     <div class="alert">{{ $message }}</div>
                 @enderror
@@ -26,13 +39,16 @@
 
             <div class="cInput" style="margin-bottom:50px;">
                 <label for="review">CUSTOMER REVIEW:</label>
-                <textarea style="height:100px;" name="review" id="review"></textarea>
+                <textarea style="height:100px;" name="review" id="review" placeholder='{{$post->review ?? ""}}'></textarea>
                 @error('review')
                     <div class="alert">{{ $message }}</div>
                 @enderror
             </div>
-            
+            @if($post->title != "")
+            <a class="rainbow"  anim="ripple"><button type="submit">UPDATE!</button></a>
+            @else
             <a class="rainbow"  anim="ripple"><button type="submit">POST!</button></a>
+            @endif
         </form>
     </div>
 </div>

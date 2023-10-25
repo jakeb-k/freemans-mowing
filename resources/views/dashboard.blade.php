@@ -30,15 +30,21 @@
                         <a href='{{url("posts/$post->id")}}'>
                         <button class="postBtn">VIEW</button>
                         </a>
+                         
                         @auth
-                        <form class="opForm" method="POST" action='{{url("posts/$post->id")}}' enctype="multipart/form-data">
-                            {{csrf_field()}}
-                            {{method_field('DELETE')}}
-                            <input name="post_id" type="hidden" value="{{$post->id}}" /> 
-                            <button type="submit">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                        <div class="authOps">
+                            <a href='{{url("posts/$post->id/edit")}}'>
+                            <button class="postBtn">EDIT</button>
+                            </a>
+                            <form class="opForm" method="POST" action='{{url("posts/$post->id")}}' enctype="multipart/form-data">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <input name="post_id" type="hidden" value="{{$post->id}}" /> 
+                                <button type="submit">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
                             </form>
+                        </div>
                         @endauth
                     </div>
                 </div>
