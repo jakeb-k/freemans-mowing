@@ -14,8 +14,17 @@ class PostController extends Controller
      */
     public function home()
     {
-       
-        return view('index'); 
+        $posts = Post::all()->reverse();
+        $bImages=[];
+        $aImages=[]; 
+        foreach($posts as $post) {
+            $x = explode(",",$post->images);
+            $bImages[]=$x[0];
+            $aImages[]=$x[1]; 
+        }
+        $bImages = array_slice($bImages,0,3);
+        $aImages = array_slice($aImages,0,3);
+        return view('index')->with('bImages',$bImages)->with('aImages',$aImages); 
     }
     public function index()
     {
@@ -44,7 +53,7 @@ class PostController extends Controller
             'description'=>'required',
             'review'=>'required',
             'imageFile' => 'required',
-            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
+            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif'
         ]);
 
         //MULTI IMAGE UPLOAD CODE
@@ -61,10 +70,11 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->review = $request->review; 
         $post->images = implode(",",$images); 
+
         $post->save(); 
 
         $posts = Post::all()->reverse(); 
-        return redirect('/posts')->with('posts',$posts); 
+        return view('dashboard')->with('posts',$posts); 
     }
 
     public function contact(Request $request)
@@ -112,7 +122,7 @@ class PostController extends Controller
             'title'=>'required:max:75',
             'description'=>'max:500',
             'review'=>'max:500',
-            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif',
         ]);
         $post = Post::find($id); 
         $count = 0; 
@@ -125,16 +135,18 @@ class PostController extends Controller
             }
             $img =  implode(",", $images);
         } else {
-            $img = $post->image; 
+            $img = $post->images; 
         }
        
         $post->title = $request->title;
         $post->description = $request->description ?? $post->description;
         $post->review = $request->review ?? $post->review; 
         $post->images = $img; 
+
         $post->save(); 
+
         $posts = Post::all()->reverse(); 
-        return redirect('/posts')->with('posts',$posts); 
+        return view('dashboard')->with('posts',$posts); 
     }
 
     /**

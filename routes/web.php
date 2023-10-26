@@ -14,7 +14,7 @@ use App\Models\Post;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-$posts = Post::all()->reverse(); 
+
 
 Route::get('/', [PostController::class, 'home']);
 Route::resource('/posts', PostController::class); 

@@ -8,7 +8,10 @@
 @endsection
 @section('content')
 <div id="fContainer">
-    <a class="back" href="{{url('/posts')}}"><button>BACK</button></a>
+    <a class="back" href="{{url('/posts')}}" style=" color:#006400;
+                                                font-family:'Work Sans', sans-serif;
+                                                font-size:20px; 
+                                                text-decoration:'underline'; ">BACK</a>
     <div id="contactCont">
         @if($post->title != "")
         <form method="POST" action='{{url("/posts/$post->id")}}' id="contact" enctype=multipart/form-data>

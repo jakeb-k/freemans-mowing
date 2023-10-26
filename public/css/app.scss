@@ -79,10 +79,16 @@ SPLASH SECTION STYLING
     font-family:'Work Sans', sans-serif; 
 }
 .slideBox {
-    height:300px;
+    height:fit-content;
     width:47.5%; 
-    border:1px solid black; 
     margin:0 1.25%; 
+    border-radius:10px; 
+    text-align:center;
+    box-shadow:0 0 5px black; 
+}
+.slideBox img {
+    max-width: 100%;
+    max-height:auto; 
     border-radius:10px; 
 }
 .slideshow {
@@ -574,8 +580,10 @@ POST STYLING
     color:rgb(34, 34, 34); 
 }
 #articleContainer img {
-    height:350px; 
-    width:350px; 
+    height:auto; 
+    max-width:475px; 
+    border-radius:15px; 
+   
 }
 #articleContainer {
     width:80%;
@@ -588,7 +596,7 @@ POST STYLING
     justify-content: space-evenly; 
 }
 .aInfo * {
-    padding:10px 0px;
+    padding:5px 20px;
 }
 /*
 

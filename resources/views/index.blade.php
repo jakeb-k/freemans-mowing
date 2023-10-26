@@ -19,8 +19,16 @@
                     </div> 
                 </div>
                 <div class="slideshow">
-                    <div class="slideBox"></div>
-                    <div class="slideBox"></div>
+                    <div class="slideBox">
+                        @foreach($aImages as $img)
+                            <img class="mySlides1 w3-animate-fading" src="{{ asset('storage/images/'.$img) }}" />
+                        @endforeach
+                    </div>
+                    <div class="slideBox">
+                        @foreach($bImages as $img)
+                            <img class="mySlides2 w3-animate-fading" src="{{ asset('storage/images/'.$img) }}" />
+                        @endforeach
+                    </div>
                 </div>
                 <div class="testimonials">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval=4500>
@@ -106,6 +114,7 @@
             </div>
 <script>
  $(function () {
+    //viewport funcs - bush click
             $('.vine-button') .click(function () {
             $('html, body') .animate ({
                 scrollTop: $("#serviceCont").offset().top + $("#serviceCont")[0].scrollHeight
@@ -121,7 +130,7 @@
                 return false;
             })
         });
-
+    //bounding box for about sec
         function isElementInViewport(el) {
             var rect = el.getBoundingClientRect();
             return (
@@ -131,6 +140,7 @@
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
             );
         }
+    //bounding box for contact form bush
         function isElementInViewport2(el) {
             var rect = el.getBoundingClientRect();
             return (
@@ -140,7 +150,7 @@
                 rect.right <= (window.innerWidth*8 || document.documentElement.clientWidth*8)
             );
         }
-
+    //scroll to about section
         function handleScroll() {
             var elements = document.querySelectorAll('#serviceCont');
             elements.forEach(function(element) {
@@ -149,7 +159,7 @@
                 }
             });
         }
-
+    //scroll to contact form
         function handleScroll2() {
             var image = document.querySelector('.fade-image');
 
@@ -163,6 +173,7 @@
                 return false; /* If it's not in the viewport, hide it */
             }
         }
+        //event listeners for all the funcs
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleScroll);
         handleScroll(); // Call this initially to check on page load
@@ -170,5 +181,43 @@
         window.addEventListener('scroll', handleScroll2);
         window.addEventListener('resize', handleScroll2);
         handleScroll2();
+
+    //auto slideshow var init and func call
+    var slideIndex1 = 0;
+    var slideIndex2 = 0;
+    carousel2();
+    carousel1();
+
+    //auto slideshow 1 function
+    function carousel1() {
+     
+    var x = document.getElementsByClassName("mySlides1");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    
+    slideIndex1++;
+    
+    if (slideIndex1 > x.length) {slideIndex1 = 1}
+    
+    x[slideIndex1-1].style.display = "block";
+    setTimeout(carousel1, 4500); // Change image every 4 seconds
+    }
+    //auto slideshow 2 function
+    function carousel2() {
+     
+    var x = document.getElementsByClassName("mySlides2");
+    for (let i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    
+    slideIndex2++;
+    
+    if (slideIndex2 > x.length) {slideIndex2 = 1}
+    
+    x[slideIndex2-1].style.display = "block";
+    setTimeout(carousel2, 4500); // Change image every 4 seconds
+    
+    }
 </script>
 @endsection
