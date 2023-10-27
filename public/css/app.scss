@@ -625,6 +625,28 @@ MEDIA QUERIES
 
 
 */
+@media only screen and (max-width:1100px){
+    .aBox {
+    display:flex;
+    flex-direction:column-reverse; 
+    justify-content: flex-start;
+   }
+    #articleContainer {
+    margin:10px auto; 
+   }
+   #articleContainer img {
+    margin:auto; 
+
+   }
+   .aImg {
+    margin-top:40px; 
+   }
+   #articleContainer .tBtn {
+    width:25%; 
+    margin:auto; 
+   }
+
+}
 @media only screen and (max-width:825px) {
     .socials {
         display:flex;
@@ -648,8 +670,9 @@ MEDIA QUERIES
         opacity: 1;
         scale: 1.8;
    }
-   .tBtn {
+   .sRow button.tBtn {
         width:100%; 
+        font-size:16px; 
    }
    .icons {
         margin-bottom:-8px; 
@@ -700,10 +723,6 @@ MEDIA QUERIES
 
     }
 
-    .a button.tBtn *{
-        font-size:12px; 
-    }
-
     .icons {
        font-size:38px; 
     }
@@ -746,6 +765,22 @@ MEDIA QUERIES
     margin:0; 
     text-align:center; 
    }
+
+   .postBox {
+    display:flex;
+    flex-direction:column; 
+   }
+   .postBox img {
+    margin:auto; 
+   }
+   .aInfo h1 {
+    font-size:32px; 
+   }
+   #articleContainer img {
+        max-width:100%;
+        height:auto;
+   }
+
 }
 @media only screen and (max-width:550px) {
     #contactCont form {
@@ -763,9 +798,12 @@ MEDIA QUERIES
     .title img {
         display:none; 
     }
-    .title h1{
+    .title h1, #footer h1{
         font-size:34px;
-        margin: 25px 0 0 -20px; 
+        margin: 30px 0 0 -20px; 
+    }
+    #header, #footer {
+        height:120px; 
     }
    .cta h1 {
         font-size:26px;
@@ -776,9 +814,6 @@ MEDIA QUERIES
    .copyright {
     display:none; 
    }
-   #footer h1 {
-    font-size:34px;
-    margin: 25px 0 0 -20px;
-   }
+
 
 }

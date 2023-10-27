@@ -201,7 +201,7 @@
     if (slideIndex1 > x.length) {slideIndex1 = 1}
     
     x[slideIndex1-1].style.display = "block";
-    setTimeout(carousel1, 4500); // Change image every 4 seconds
+    setTimeout(carousel1, 7000); // Change image every 4 seconds
     }
     //auto slideshow 2 function
     function carousel2() {
@@ -216,7 +216,7 @@
     if (slideIndex2 > x.length) {slideIndex2 = 1}
     
     x[slideIndex2-1].style.display = "block";
-    setTimeout(carousel2, 4500); // Change image every 4 seconds
+    setTimeout(carousel2, 7000); // Change image every 4 seconds
     
     }
 </script>
