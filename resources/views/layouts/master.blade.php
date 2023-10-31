@@ -34,7 +34,7 @@
                         <div class="sRow">
                             <a href='{{url("posts")}}'>
                                 <button class="tBtn">
-                                    BLOG
+                                    TESTIMONIALS
                                     <svg width="79" height="46" viewBox="0 0 79 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_f_618_1123)">
                                         <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"/>
@@ -79,8 +79,8 @@
                     </div>
                 
                     <div class="title">
-                        <h1>Freeman's<br><span style="color:white;">Mowing</span></h1>
-                        <img src="{{url('images/mowgo.png')}}" />
+                        <a href="{{url('/')}}">
+                        <img src="{{url('images/mowgo.jpg')}}" /></a>
                      </div>
             </div>
     @yield('content')
@@ -94,7 +94,7 @@
                     <div class="sRow">
                         <a href='{{url("posts")}}'>
                             <button class="tBtn">
-                                BLOG
+                                TESTIMONIALS
                                 <svg width="79" height="46" viewBox="0 0 79 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_f_618_1123)">
                                     <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z" fill="url(#paint0_linear_618_1123)"/>
@@ -138,7 +138,8 @@
                 </div>
                 <div class="copyright">© 2023 JK Web Dev</div>
                 <div class="title">
-                    <h1>Freeman's<br><span style="color:white;">Mowing</span></h1>
+                    <a href="{{url('/')}}">
+                       <h1>Freeman's<br><span style="color:white;">Lawns</span></h1></a>
                 </div>
             </div>
               

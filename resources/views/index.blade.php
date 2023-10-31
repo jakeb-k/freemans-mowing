@@ -6,7 +6,7 @@
         <div id="container">
             <div id="splashCont">
                 <div class="cta">
-                    <h1>If you want your lawn to look immaculate, don't wait any longer.</h1>
+                    <h1>Get a Free Quote <a class="contactBtn" style="text-decoration:underline; cursor:pointer;">Now!</a></h1>
                     <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span class="heart-beat"><button class="vine-button" style="color:white;">CONTACT NOW →</button></span>
                     <span style="font-size:16px; font-style:italic">Click to trim the pesky bush</span></h3>
                 </div>
@@ -61,17 +61,12 @@
                             <li>Lawn Mowing</li>
                             <li>Grass Trimming and Edging</li>
                             <li>Weed Control and Removal</li>
-                            <li>Fertilization and Soil Treatment</li>
-                            <li>Lawn Aeration</li>
-                            <li>Seeding and Sod Installation</li>
-                            <li>Lawn Dethatching</li>
+                            <li>Yard Clean Ups </li>
+                            <li>Rubbish Removal</li>
                         </ul>
                     </div>
                     <div class="serBox">
-                        <ul class="animated-list">
-                           <li>Irrigation System Installation and Maintenance</li>
-                            <li>Landscape Design and Installation</li>
-                            <li>Pest and Disease Control for Lawns</li>
+                        <ul class="animated-list">   
                             <li>Mulching and Bed Maintenance</li>
                             <li>Seasonal Cleanups (Spring and Fall)</li>
                             <li>Tree and Shrub Pruning</li>

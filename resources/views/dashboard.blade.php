@@ -29,6 +29,7 @@
                     <h3> {{$post->title}} </h3>
                     <h6> <i> {{$post->date?? date_format($post->created_at, 'jS \of F')}} </i></h6>
                     <p>{{$post->description}}</p>
+                    <p><i>{{$post->review}}</i></p>
 
                     <div class="postOps">
 

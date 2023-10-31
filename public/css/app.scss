@@ -58,8 +58,18 @@ SPLASH SECTION STYLING
     font-size:62px; 
 }
 .title img {
-    width: 256px;
-    height: 256px;
+  height:auto;
+  width:269px; 
+  margin:20px; 
+  border-radius:15px; 
+  box-shadow:0 0 20px black; 
+}
+.fTitle img {
+    height:auto;
+    width:269px; 
+    margin-top:20px; 
+    border-radius:15px; 
+    box-shadow:0 0 20px black; 
 }
 .icons {
     font-size:44px; 
@@ -671,17 +681,18 @@ MEDIA QUERIES
         scale: 1.8;
    }
    .sRow button.tBtn {
-        width:100%; 
-        font-size:16px; 
+        width:90%; 
+        font-size:14px; 
    }
    .icons {
         margin-bottom:-8px; 
         padding:0; 
    }
-   .title img {
-    height:192px;
-    width:192px; 
+   .title img, .fTitle img {
+        height: 120px;
+        width: 179px;
    }
+
    .title h1, #footer h1 {
     font-size:48px; 
    }
@@ -727,9 +738,10 @@ MEDIA QUERIES
        font-size:38px; 
     }
 
-    .title img {
-        height: 160px;
-        width: 160px;
+    .title img,  .fTitle img {
+        margin-left:-20px; 
+        height: 80px;
+        width: 119px;
     }
 
     .title h1 {
@@ -795,9 +807,7 @@ MEDIA QUERIES
     }
 }
 @media only screen and (max-width:520px) {
-    .title img {
-        display:none; 
-    }
+
     .title h1, #footer h1{
         font-size:34px;
         margin: 30px 0 0 -20px; 
