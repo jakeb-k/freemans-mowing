@@ -18,8 +18,10 @@
     height:90px; 
 }
 #eHeader img {
-    width:128px;
-    height:128px; 
+    height: 120px;
+    width: 179px;
+    border-radius:15px; 
+    box-shadow:0 0 20px black; 
 }
 #eBody {
     display:flex;
@@ -47,7 +49,7 @@ span {
 <div id="emailCont">
     <div id="eHeader">
         <h1> Freeman's <br><span> Mowing </span></h1>
-        <img src="{{url('images/mowgo.png')}}" />
+        <img src="{{url('images/mowgo.jpg')}}" />
     </div>
     <div id="eBody">
         <h1><span style="color:black;">Sender:</span> {{$data->name}} </h1>

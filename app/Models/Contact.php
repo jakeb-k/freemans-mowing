@@ -24,7 +24,7 @@ class Contact extends Model
 
                 
 
-            $adminEmail = "jakebspamshit@gmail.com";
+            $adminEmail = "freemanslawns2022@gmail.com";
 
             Mail::to($adminEmail)->send(new ContactMail($item));
 

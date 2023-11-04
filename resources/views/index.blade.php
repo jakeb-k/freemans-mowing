@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-<title>Freeman's Mowing</title>   
+<title>Gold Coast Lawn Mowing</title>   
 @endsection
 @section('content')
         <div id="container">
