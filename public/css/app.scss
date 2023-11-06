@@ -26,6 +26,21 @@ SPLASH SECTION STYLING
     background:#006400; 
     height:180px; 
 }
+#header {
+    position:fixed; 
+    top:0; 
+    width:100%; 
+    transition:0.3s ease-in-out; 
+    z-index:4; 
+}
+.shrunken, #header.shrunken {
+    height:80px;
+}
+.shrunken * {
+    scale:0.85; 
+    margin-top:-10px; 
+    transition: 0.3s ease-in-out;
+}
 .socials {
     display:flex;
     flex-direction:column; 
@@ -76,7 +91,7 @@ SPLASH SECTION STYLING
     margin:5px; 
 }
 .cta {
-    margin:8.5% auto 0; 
+    margin:18.5% auto 0; 
     width:80%;
 }
 .cta h1, .before-after h1{

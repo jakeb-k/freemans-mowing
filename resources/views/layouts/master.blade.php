@@ -149,7 +149,15 @@
     </body>
 </html>
 <script>
-       
+   $(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) { // Adjust the scroll position as needed
+            $('#header').addClass('shrunken');
+        } else {
+            $('#header').removeClass('shrunken');
+        }
+        });
+    });    
 
     [].map.call(document.querySelectorAll('[anim="ripple"]'), el=> {
     el.addEventListener('click',e => {
