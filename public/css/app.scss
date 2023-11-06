@@ -540,7 +540,7 @@ DASHBOARD STYLING
 }
 #dashboard {
     width:80%;
-    margin:100px auto; 
+    margin:150px auto; 
 }
 #dashboard h1 {
     font-family: 'Staatliches', sans-serif;
@@ -827,10 +827,15 @@ MEDIA QUERIES
     }
     .shrunken * {
         scale: 0.9;
-        margin:-10px 5px 0; 
+        
     }
-    .shrunken .socials {
-        margin-top:-10px; 
+    .shrunken .tBtn {
+        margin-top:5px; 
+    }
+    .shrunken .sRow {
+        padding-top: 15px;
+        margin-top:15px; 
+        align-content:flex-end; 
     }
     .title h1, #footer h1{
         font-size:34px;
