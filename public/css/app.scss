@@ -460,8 +460,10 @@ width: 100%;
 }
 a button.tBtn {
   animation: 1.5s ease infinite alternate running shimmer;
+  -webkit-animation: 1.5s ease infinite alternate running shimmer;
   background: linear-gradient(90deg, #ccff33 0%, #77cd41 30%, #006400c5 85%);
   background-size: 200% 100%;
+  
   border: none;
     border-radius: 6px;
   box-shadow: -2px -2px 10px rgba(255, 227, 126, 0.5), 2px 2px 10px rgba(144, 148, 255, 0.5);
@@ -470,10 +472,11 @@ a button.tBtn {
     font-family: 'Staatliches';
   font-size: 22px;
   overflow: hidden;
-  padding: 10px 20px;
+  padding: 5px 10px;
   position: relative;
   text-decoration: none;
   transition: 0.2s;
+  height:55px; 
   
   svg {
     left: -20px;
@@ -481,22 +484,23 @@ a button.tBtn {
     position: absolute;
     top: -2px;
     transition: 0.5s cubic-bezier(.5,-0.5,.5,1.5);
+    -webkit-transition: 0.5s cubic-bezier(.5, -0.5, .5, 1.5);
   }
-  
-  &:hover svg {
+}
+  a button.tBtn:hover svg {
     opacity: 0.8;
     transform: translateX(50px) scale(1.5);
   }
   
-  &:hover {
+  a button.tBtn:hover {
     transform: rotate(-3deg);
   }
   
-  &:active {
+  a button.tBtn:active {
     transform: scale(0.95) rotate(-3deg);
   }
 
-}
+
 
 
 /*
@@ -698,6 +702,7 @@ MEDIA QUERIES
    .sRow button.tBtn {
         width:90%; 
         font-size:14px; 
+        height:35px; 
    }
    .icons {
         margin-bottom:-8px; 
