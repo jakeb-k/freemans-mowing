@@ -7,7 +7,7 @@
             <div id="splashCont">
                 <div class="cta">
                     <h1>Get a Free Quote <a class="contactBtn" style="text-decoration:underline; cursor:pointer;">Now!</a></h1>
-                    <h3>Contact our lawn mowing experts today for a beautifully manicured yard that will make your neighbors green with envy! <span class="heart-beat"><button class="vine-button" style="color:white;">CONTACT NOW →</button></span>
+                    <h3>Contact our lawn mowing experts today (based in South Gold Coast) for a beautifully manicured yard that will make your neighbors green with envy! <span class="heart-beat"><button class="vine-button" style="color:white;">CONTACT NOW →</button></span>
                     <span style="font-size:16px; font-style:italic">Click to trim the pesky bush</span></h3>
                 </div>
                 <div class="before-after">
